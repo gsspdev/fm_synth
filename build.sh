@@ -26,11 +26,21 @@ cargo build --release
 
 # Build the WebAssembly module
 echo "🔨 Building WebAssembly module..."
-wasm-pack build --target web --out-dir pkg
+wasm-pack build --target web --out-dir pkg_temp # Build to a temporary pkg directory
 
-# Create a proper index.html that loads the WASM module
-echo "📝 Updating index.html for WASM integration..."
-cat > index_wasm.html << 'EOF'
+# Create the docs directory
+echo "📁 Creating docs directory for GitHub Pages..."
+rm -rf docs/
+mkdir -p docs/pkg
+
+# Move WASM build output to docs/pkg
+echo "📦 Moving WASM build to docs/pkg..."
+mv pkg_temp/* docs/pkg/
+rm -rf pkg_temp # Clean up temporary pkg directory
+
+# Create index.html in docs directory
+echo "📝 Creating docs/index.html for WASM integration..."
+cat > docs/index.html << 'EOF'
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -281,15 +291,16 @@ cat > index_wasm.html << 'EOF'
 </html>
 EOF
 
-echo "✅ Build complete!"
+echo "✅ Build complete for GitHub Pages!"
 echo ""
-echo "📁 Output files:"
-echo "  - pkg/         (WASM module and bindings)"
-echo "  - index_wasm.html (Web interface)"
+echo "📁 Output files in docs/ directory:"
+echo "  - docs/pkg/         (WASM module and bindings)"
+echo "  - docs/index.html   (Web interface)"
 echo ""
-echo "🚀 To run the web version:"
-echo "  1. Start a local server:"
+echo "🚀 To run locally before pushing to GitHub Pages:"
+echo "  1. Run this build script: ./build.sh"
+echo "  2. Start a local server in the project root:"
 echo "     python3 -m http.server 8000"
-echo "  2. Open http://localhost:8000/index_wasm.html"
+echo "  3. Open http://localhost:8000/docs/index.html"
 echo ""
 echo "🎹 Happy synthesizing!"
