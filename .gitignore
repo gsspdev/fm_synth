@@ -1,9 +1,9 @@
 # Build output for GitHub Pages
-/docs/
+# /docs/
 
 # Old/local WASM build output
-/pkg/
+# /pkg/
 /pkg_temp/
 
 # Rust build artifacts
-/target/
+/target/debug/
