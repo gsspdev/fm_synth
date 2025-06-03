@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-/target
-=======
 # Build output for GitHub Pages
 /docs/
 
@@ -10,4 +7,3 @@
 
 # Rust build artifacts
 /target/
->>>>>>> 085ddf9 (added Cargo.toml and github workflow)
