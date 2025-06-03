@@ -6,4 +6,4 @@
 /pkg_temp/
 
 # Rust build artifacts
-/target/
+/target/debug/

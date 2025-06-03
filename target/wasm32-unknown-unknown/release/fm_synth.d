@@ -1,1 +1,1 @@
-/Users/music/Developer/fm_synth_claude_4_opus/target/wasm32-unknown-unknown/release/fm_synth.wasm: /Users/music/Developer/fm_synth_claude_4_opus/src/lib.rs
+/Users/music/Developer/fm_synth/target/wasm32-unknown-unknown/release/fm_synth.wasm: /Users/music/Developer/fm_synth/src/lib.rs /Users/music/Developer/fm_synth/src/synth_core.rs /Users/music/Developer/fm_synth/src/synth_data.rs

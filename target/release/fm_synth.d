@@ -1,0 +1,1 @@
+/Users/music/Developer/fm_synth/target/release/fm_synth: /Users/music/Developer/fm_synth/src/lib.rs /Users/music/Developer/fm_synth/src/main.rs /Users/music/Developer/fm_synth/src/synth_core.rs /Users/music/Developer/fm_synth/src/synth_data.rs
